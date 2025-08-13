@@ -151,11 +151,92 @@
     <button type="submit">가입</button>
   </form>
 
+  <hr>
 
+  <!-- 파일 첨부 -->
+  <label for="myfile">파일 첨부:</label>
+  <input type="file" id="myfile">
+  <br>
+  <label for="myfile">여러 파일 첨부:</label>
+  <input type="file" id="myfile" multiple>
+  <br>
 
+  <hr>
 
+  <!-- 범위 선택(기본값: 0~100) -->
+  <label for="volume">음량(0~50):</label>
+  <input type="range" id="volume" min="0" max="50" step="2">
 
+  <hr>
 
+  <!-- 비밀번호 -->
+  <label for="pwd">비밀번호:</label>
+  <input type="password" id="pwd" maxlength="10">
+
+  <hr>
+
+  <!-- 셀렉트 박스(콤보 박스) -->
+  <!-- 속성
+    value: 서버로 전송되는 선택한 항목의 실제값
+    selected: 항목을 미리 선택
+  -->
+  <label for="cars">차량 선택:</label>
+  <select id="cars">
+    <option value="">선택</option>
+    <option value="volvo">Volvo</option>
+    <option value="benz">Benz</option>
+    <option value="audi" selected>Audi</option>
+  </select>
+
+  <hr>
+
+  <!-- 여러 줄 입력 -->
+  <p>
+    <label for="multi1">여러 줄 입력1:</label>
+  </p>
+  <textarea id="multi1" cols="30" rows="6"></textarea>
+  <p>
+    <label for="multi2">여러 줄 입력2:</label>
+  </p>
+  <textarea id="multi2" cols="30" rows="6" spellcheck="false"></textarea>
+  <p>
+    <label for="multi3">여러 줄 입력3:</label>
+  </p>
+  <textarea id="multi3" cols="30" rows="6" style="resize: none;"></textarea>
+
+  <!-- form(동기식): 사용자가 작성한 내용을 서버로 전송, 어떤 서버 경로로, 어떤 방식(GET, POST)으로 전달할지 설정 -->
+  <form action="/login" method="GET">
+    <!-- name 속성: 서버로 전달할 때 유니크하게 구분하기 위한 이름 -->
+    <input type="text" name="id">
+    <input type="password" name="pw">
+    <button type="submit">로그인</button>
+  </form>
+  
+  <!-- (결론적으로 form 태그를 쓸 수는 있어도 form을 이용한 동기식 요청은 요새 안씀) -->
+  <!-- 동기식과 비동기식의 가장 큰 차이는
+    동기식은 응답 올 때까지 멈춤,
+    비동기식은 기다리지 않고 진행
+
+    1) 동기식 요청(Synchronous Request)
+    요청을 보낸 뒤, 응답이 올 때까지 브라우저가 멈춤
+    응답이 올 때까지 다른 작업을 할 수 없음
+    사용성, 퍼포먼스 모두 떨어져 현대 웹에서는 거의 사용 안 함
+
+    예시:
+    전통적인 <form> 전송
+    과거 결제 모듈에서 사용
+
+    2) 비동기식 요청(Asynchronous Request)
+    요청을 보낸 뒤에도 브라우저는 멈추지 않고 다른 작업을 계속할 수 있음
+    서버 응답이 도착하면 그때 처리함
+    사용자가 화면 조작을 계속할 수 있어서 UX가 좋음
+
+    예시:
+    검색 자동완성
+    댓글 달기
+    쇼핑몰 장바구니 추가
+    무한 스크롤
+  -->
 
 
 
