@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .text-input {
+      width: 120px;
+      padding: 6px 10px;
+      font-size: 20px;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+      transition: 0.5s;
+    }
+    /* Quiz: focus 됐을 때 테두리색 변경(#f00) */
+    .text-input:focus {
+      /* border: 2px solid #f00; */
+      border-color: #f00;
+    }
+  </style>
+</head>
+<body>
+  <h2>연습</h2>
+  <form>
+    <input type="text">
+    <input type="text" class="text-input">
+    <button type="submit">전송</button>
+    <!-- <form> 태그 안에서 버튼의 타입을 안써주면 submit으로 동작함
+      type은 명시적으로 써주는 것을 권장 -->
+
+    <!-- input 태그 쓸 때 label 태그도 같이 사용(권장) -->
+    <p>
+      <label for="name">너의 이름은</label>
+    </p>
+    <input type="text" id="name" class="text-input">
+  </form>
+
+  <h2>실전</h2>
+  <!-- 박스부터 그리기 -->
+  <div class="form-background">
+    <!-- 가로 길이는 80%를 차지하다가 700px에서 더 이상 안늘어나도록 제한 -->
+    <div class="form-container">
+      <form>
+        <h3>Contact Us</h3>
+
+        <!-- label, input, textarea -->
+      </form>
+    </div>
+  </div>
+</body>
+</html>
