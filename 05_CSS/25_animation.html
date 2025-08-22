@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
+  <!-- 구글 머티리얼 심볼/아이콘 -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <!-- Animate.css 라이브러리 -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
   <style>
     .btn {
       padding: 15px 20px;
@@ -64,6 +73,31 @@
     .shake-shake {
       animation: shake-hard .4s;
     }
+
+    .material-symbols-outlined {
+      font-size: 100px;
+      color: cornflowerblue;
+      cursor: pointer;
+    }
+    .turn:hover {
+      animation-name: turn;
+      animation-duration: 1s;
+      /* 애니메이션이 재생되지 않을 때 요소에 대한 스타일을 지정 */
+      animation-fill-mode: forwards; /* 애니메이션이 끝났을 때 마지막 상태 유지 */
+    }
+    @keyframes turn {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(-15deg); }
+      100% { transform: rotate(45deg); }
+    }
+
+    .spin {
+      animation: spin infinite 3s linear;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
   </style>
 </head>
 <body>
@@ -77,6 +111,19 @@
     <input type="number" id="age">
     <button type="button" onclick="register()">등록</button>
   </div>
+
+  <h2>turn 애니메이션 만들기</h2>
+  <span class="material-symbols-outlined turn">add</span>
+
+  <!-- Quiz: 360도 무한 회전하는 애니메이션 만들기 -->
+  <h2>spin 애니메이션 만들기</h2>
+  <span class="material-symbols-outlined spin">star</span>
+
+  <!-- Animate.css 라이브러리 -->
+  <h1 class="animate__animated animate__jackInTheBox">An animated element</h1>
+  <h1 class="animate__animated animate__bounce animate__delay-2s">An animated element</h1>
+  <h1 class="animate__animated animate__bounce animate__faster">An animated element</h1>
+  <h1 class="animate__animated animate__bounce animate__repeat-2">An animated element</h1>
 
   <script>
     const modalEl = document.querySelector('#modal');
