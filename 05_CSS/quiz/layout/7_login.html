@@ -13,6 +13,35 @@
       box-sizing: border-box;
     }
 
+    .form-input {
+      width: 100%;
+      outline: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* 버튼의 공통 스타일 */
+    .btn {
+      width: 100%;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    /* 버튼의 개별 스타일 */
+    .btn-login {
+      background-color: #09aa5c;
+      margin-top: 40px;
+    }
+    .btn-join {
+      border: 1px solid #09aa5c;
+      color: #09aa5c;
+      background-color: #fff;
+      margin-top: 10px;
+    }
+    
 
   </style>
 </head>
@@ -29,8 +58,8 @@
         <span class="material-symbols-outlined icon-eye">visibility_off</span>
       </div>
 
-      <button type="button" class="btn">로그인</button>
-      <button type="button" class="btn">회원가입</button>
+      <button type="button" class="btn btn-login">로그인</button>
+      <button type="button" class="btn btn-join">회원가입</button>
     </div>
   </div>
 </body>
