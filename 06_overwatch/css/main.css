@@ -3,13 +3,25 @@
   모든 CSS 코드는 HTML 구조에 맞춰 작성하는게 좋음
 */
 
+body {
+  background-image: url("../images/bg.jpg");
+  /* 배경 이미지의 높이를 가득 채우기 위해 body를 화면 높이의 100%로 맞춤 
+    => 100% 가 아니라 100vh
+  */
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+.container {
+  padding: 50px 0;
+}
 
 .container .heroes {
   display: flex;
   flex-wrap: wrap;
   /* 영역 확인용 배경색 */
-  background-color: orange;
+  /* background-color: orange; */
   justify-content: center;
   /* width: 700px; */
   max-width: 700px;
@@ -93,3 +105,13 @@
 
 .container .heroes .hero:nth-child(31) .image { background-image: url("../images/hero31.png"); }
 .container .heroes .hero:nth-child(32) .image { background-image: url("../images/hero32.png"); }
+
+.container .logo {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.container .logo img {
+  /* 부모 요소 가로 너비의 100%, 300px 보다 커질 수 없음 */
+  width: 100%;
+}
