@@ -117,7 +117,38 @@
     // 잘못된 id입력: alert('존재하지 않는 아이디입니다.');
     // 잘못된 pw입력: alert('잘못된 비밀번호입니다.');
     // 로그인 성공 시: alert('~~~님 방문을 환영합니다!');
-    
+    function login(inputId, inputPw) {
+      // 풀이1
+      // if (dbUser.id === inputId) {
+      //   if (dbUser.pw === inputPw) {
+      //     alert(dbUser.name + '님 방문을 환영합니다!');
+      //   } else {
+      //     alert('잘못된 비밀번호입니다.');
+      //   }
+      // } else {
+      //   alert('존재하지 않는 아이디입니다.');
+      // }
+
+      // 풀이2: 오류 케이스를 먼저 체크하는 방식(권장 - 코드가 더 간결해짐)
+      // if (dbUser.id !== inputId) {
+      //   alert('존재하지 않는 아이디입니다.');
+      // } else if (dbUser.pw !== inputPw) {
+      //   alert('잘못된 비밀번호입니다.');
+      // } else {
+      //   alert(dbUser.name + '님 방문을 환영합니다!');
+      // }
+
+      // early return 패턴 적용
+      if (dbUser.id !== inputId) {
+        alert('존재하지 않는 아이디입니다.');
+        return;
+      }
+      if (dbUser.pw !== inputPw) {
+        alert('잘못된 비밀번호입니다.');
+        return;
+      }
+      alert(dbUser.name + '님 방문을 환영합니다!');
+    }
 
     // 위에 ** 참조
     const inputId = document.querySelector('#id');
