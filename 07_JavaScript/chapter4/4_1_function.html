@@ -9,6 +9,15 @@
   <!-- * -->
   <button type="button" onclick="changeColor()">배경색 바꾸기</button>
 
+  <hr>
+
+  <!-- ** -->
+  <input type="text" id="id" placeholder="아이디" aria-label="아이디">
+  <input type="password" id="pw" placeholder="비밀번호" aria-label="비밀번호">
+  <button type="button" class="btn-login">로그인</button>
+
+  <hr>
+
   <script>
     // 함수
     // 기능(동작)을 수행하는 여러 실행 코드들의 묶음(그룹화)
@@ -88,6 +97,37 @@
     //   실행코드;
     // }
     // 함수명(인자값1, 인자값2, ...);
+    // function introduce(name, area) { // 외부에서 받을 데이터가 있으면 매개변수(Parameters) 선언
+    function introduce(name, area = '대한민국') { // ES6차
+      document.write(`안녕하세요. ${name}입니다.<br>`);
+      document.write(`사는 곳은 ${area}입니다.<br>`);
+    }
+    introduce('김재현', '영등포'); // 인수(인자값, 매개값, Arguments)를 전달
+    introduce('김재현'); // 꼭 인자값 수를 맞출 필요는 없음!
+    introduce('김재현', '영등포', '무의미한 데이터');
+
+    // 로그인 함수 만들기
+    const dbUser = {
+      id: 'goni',
+      pw: '1234',
+      name: '김재현'
+    };
+
+    // Quiz: login 함수 선언하고 호출하기
+    // 잘못된 id입력: alert('존재하지 않는 아이디입니다.');
+    // 잘못된 pw입력: alert('잘못된 비밀번호입니다.');
+    // 로그인 성공 시: alert('~~~님 방문을 환영합니다!');
+    
+
+    // 위에 ** 참조
+    const inputId = document.querySelector('#id');
+    const inputPw = document.querySelector('#pw');
+    const btnLogin = document.querySelector('.btn-login');
+
+    btnLogin.addEventListener('click', function () { // 익명 함수
+      login(inputId.value, inputPw.value);
+    });
+
 
 
 
