@@ -62,7 +62,11 @@
     }
 
     // 반복문 사용 시
-    
+    for (let i = 0; i < productList.length; i++) {
+      if (productList[i].price <= inputCoin) {
+        document.write(productList[i].name, '<br>');
+      }
+    }
   </script>
 </head>
 <body>
