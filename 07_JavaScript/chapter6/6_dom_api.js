@@ -45,4 +45,4 @@ boxEl.addEventListener('click', function (e) {
 
 // 참고 링크
 // 이벤트 종류: https://www.w3schools.com/jsref/dom_obj_event.asp (<-- 한 번 정도 슥 읽어볼 것!)
-// HTML DOM 속성/메소드: https://www.w3schools.com/jsref/dom_obj_document.asp
+// HTML DOM 속성/메소드: https://www.w3schools.com/jsref/dom_obj_all.asp
