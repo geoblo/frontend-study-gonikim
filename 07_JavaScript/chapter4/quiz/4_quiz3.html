@@ -19,7 +19,24 @@
 
 
     // 풀이3
-    
+    function pow(x, n) {
+      // let result = 1;
+      let result = x; // 반복을 1번이라도 줄이려면
+
+      for (let i = 1; i < n; i++) {
+        result *= x;
+      }
+      return result;
+    }
+
+    const x = prompt('x?');
+    const n = prompt('n?');
+
+    if (n < 1) {
+      alert('양의 정수이어야 합니다.');
+    } else {
+      document.write(pow(x, n));
+    }
   </script>
 </body>
 </html>

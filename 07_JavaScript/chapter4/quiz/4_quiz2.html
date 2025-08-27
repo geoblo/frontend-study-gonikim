@@ -34,6 +34,9 @@
      * @param {number} n2
      * @returns n1 + n2
      */
+    function add(n1, n2) {
+      return n1 + n2;
+    }
 
     /**
      * 뺄셈 함수
@@ -41,6 +44,9 @@
      * @param {number} n2
      * @returns n1 - n2
      */
+    function minus(n1, n2) {
+      return n1 - n2;
+    }
 
     /**
      * 곱셈 함수
@@ -48,6 +54,9 @@
      * @param {number} n2
      * @returns n1 * n2
      */
+    function multiple(n1, n2) {
+      return n1 * n2;
+    }
 
     /**
      * 나눗셈 함수
@@ -55,6 +64,9 @@
      * @param {number} n2
      * @returns n1 / n2
      */
+    function divide(n1, n2) {
+      return n1 / n2;
+    }
 
     /**
      * 사칙 연산 함수
@@ -63,7 +75,17 @@
      * @param {string} operator
      * @returns 사칙연산 결과
      */
-    
+    function calculator(n1, n2, operator) {
+      if (operator === '+') {
+        return add(n1, n2);
+      } else if (operator === '-') {
+        return minus(n1, n2);
+      } else if (operator === '*') {
+        return multiple(n1, n2);
+      } else if (operator === '/') {
+        return divide(n1, n2);
+      }
+    }
   </script>
 </body>
 </html>
