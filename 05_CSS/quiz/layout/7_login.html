@@ -64,6 +64,10 @@
       padding: 27px 15px 8px;
       position: relative;
     }
+    .login-container .id-box.focused,
+    .login-container .pw-box.focused {
+      border: 2px solid #09aa5c;
+    }
     .login-container .id-box {
       border-radius: 8px 8px 0 0;
     }
@@ -108,5 +112,26 @@
       <button type="button" class="btn btn-join">회원가입</button>
     </div>
   </div>
+
+  <script>
+    const inputEls = document.querySelectorAll('input.form-input');
+    const eyeIcon = document.querySelector('.icon-eye');
+
+    inputEls.forEach(function (inputEl) {
+      console.log(inputEl);
+      const parentEl = inputEl.parentElement; // 부모 요소를 반환
+      console.log(parentEl);
+      
+      // focus: 포커스가 주어졌을 때 발생
+      inputEl.addEventListener('focus', function () {
+        parentEl.classList.add('focused');
+      });
+
+      // blur: 포커를 잃을 때 발생
+      inputEl.addEventListener('blur', function () {
+        parentEl.classList.remove('focused');
+      });
+    });
+  </script>
 </body>
 </html>
