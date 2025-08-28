@@ -147,6 +147,11 @@
           parentEl.classList.remove('on');
         }
       });
+
+      // input: 요소가 입력을 받을 때마다 변경된 직후에 발생
+      inputEl.addEventListener('input', function () {
+        console.log('input 이벤트 발생!');
+      });
     });
 
     eyeIcon.addEventListener('click', function () {
