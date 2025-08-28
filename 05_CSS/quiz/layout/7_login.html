@@ -135,13 +135,18 @@
     });
 
     eyeIcon.addEventListener('click', function () {
-      if (pwInput.type === 'password') {
-        eyeIcon.textContent = 'visibility';
-        pwInput.type = 'text';
-      } else {
-        eyeIcon.textContent = 'visibility_off';
-        pwInput.type = 'password';
-      }
+      // if (pwInput.type === 'password') {
+      //   eyeIcon.textContent = 'visibility';
+      //   pwInput.type = 'text';
+      // } else {
+      //   eyeIcon.textContent = 'visibility_off';
+      //   pwInput.type = 'password';
+      // }
+
+      // 삼항 연산자 사용 시
+      const isPassword = pwInput.type === 'password';
+      pwInput.type = isPassword ? 'text' : 'password';
+      eyeIcon.textContent = isPassword ? 'visibility' : 'visibility_off';
     });
   </script>
 </body>
