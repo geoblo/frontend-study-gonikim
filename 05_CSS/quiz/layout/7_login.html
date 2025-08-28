@@ -83,7 +83,9 @@
       color: rgba(0, 0, 0, 0.5);
       transition: 0.3s;
     }
-    .login-container .form-input:focus + .text-label {
+    .login-container .form-input:focus + .text-label,
+    .login-container .id-box.on .text-label,
+    .login-container .pw-box.on .text-label {
       font-size: 12px;
       bottom: 30px;
     }
@@ -131,6 +133,19 @@
       // blur: 포커를 잃을 때 발생
       inputEl.addEventListener('blur', function () {
         parentEl.classList.remove('focused');
+      });
+
+      // 이벤트 추가 실습
+      // change: 요소의 값이 변경되고 포커스를 잃었을 때 발생
+      inputEl.addEventListener('change', function () {
+        console.log('change 이벤트 발생!');
+        console.log(inputEl.value);
+        
+        if (inputEl.value) { // input 요소에 값이 있으면
+          parentEl.classList.add('on');
+        } else {
+          parentEl.classList.remove('on');
+        }
       });
     });
 
