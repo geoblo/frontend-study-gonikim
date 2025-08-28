@@ -48,5 +48,24 @@
     <button type="button" class="btn-change">변경</button>
   </div>
   <img src="images/dung.png" alt="뚱이" class="dung" width="50">
+
+  <script>
+    const widthInput = document.querySelector('#widthValue');
+    const heightInput = document.querySelector('#heightValue');
+    const changeBtn = document.querySelector('.btn-change');
+    const dung = document.querySelector('.dung');
+
+    changeBtn.addEventListener('click', function () {
+      console.log(widthInput.value, heightInput.value);
+
+      // 방법1
+      // dung.width = widthInput.value;
+      // dung.height = heightInput.value;
+
+      // 방법2
+      dung.style.width = `${widthInput.value}px`;
+      dung.style.height = `${heightInput.value}px`;
+    });
+  </script>
 </body>
 </html>
