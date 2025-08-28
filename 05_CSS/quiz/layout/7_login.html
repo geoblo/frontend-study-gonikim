@@ -116,6 +116,7 @@
   <script>
     const inputEls = document.querySelectorAll('input.form-input');
     const eyeIcon = document.querySelector('.icon-eye');
+    const pwInput = document.getElementById('pw');
 
     inputEls.forEach(function (inputEl) {
       console.log(inputEl);
@@ -131,6 +132,16 @@
       inputEl.addEventListener('blur', function () {
         parentEl.classList.remove('focused');
       });
+    });
+
+    eyeIcon.addEventListener('click', function () {
+      if (pwInput.type === 'password') {
+        eyeIcon.textContent = 'visibility';
+        pwInput.type = 'text';
+      } else {
+        eyeIcon.textContent = 'visibility_off';
+        pwInput.type = 'password';
+      }
     });
   </script>
 </body>
