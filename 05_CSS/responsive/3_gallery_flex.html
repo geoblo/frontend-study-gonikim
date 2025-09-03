@@ -37,11 +37,27 @@
 
     /* Quiz */
     /* 768~960px 사이 일때는 한 줄에 3장씩 */
+    @media screen and (min-width: 768px) and (max-width: 960px) {
+      .gallery .img-group img {
+      /* 여백 넣은 만큼 빼주기 */
+        width: calc(33.33% - 40px);
+      }
+    }
 
     /* 480~767px 사이 일때는 한 줄에 2장씩 */
-    
-    /* ~479px 이하 일때는 한 줄에 1장씩 */
+    @media screen and (min-width: 480px) and (max-width: 767px) {
+      .gallery .img-group img {
+      /* 여백 넣은 만큼 빼주기 */
+        width: calc(50% - 40px);
+      }
+    }
 
+    /* ~479px 이하 일때는 한 줄에 1장씩 */
+    @media screen and (max-width: 479px) {
+      .gallery .img-group img {
+        width: calc(100% - 40px);
+      }
+    }
   </style>
 </head>
 <body>
