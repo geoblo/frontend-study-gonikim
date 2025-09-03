@@ -25,8 +25,37 @@
       2) 게시판이나 리스트형 목록의 경우 중요하지 않은 컬럼은 숨김, 이미지나 카드형 목록은 줄바꿈
       3) 폰트 크기나 이미지 사이즈 등 콘텐츠의 크기 및 여백을 모바일 화면에 맞춰서 작게 조절 
     */
+    body {
+      background-color: tan;
+      color: black;
+    }
 
+    /* 장치가 화면이고, 최대 너비가 1023px 일 때(=> 1023px 이하에서) */
+    /* @media screen and (max-width: 1023px) { */
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      body {
+        background-color: blue;
+        color: white;
+      }
 
+      /* 제목의 글자 크기를 24px로 변경 */
+      h1 {
+        font-size: 24px;
+      }
+    }
+
+    /* 장치가 화면이고, 최대 너비가 767px 일 때(=> 767px 이하에서) */
+    @media screen and (max-width: 767px) {
+      body {
+        background-color: olive;
+        /* color: white; */ /* 굳이 중복 적용할 필요 없음 */
+      }
+
+      /* 제목의 글자 크기를 16px로 변경 */
+      h1 {
+        font-size: 16px;
+      }
+    }
 
     /* (중요) 
       1. 미디어 쿼리는 가장 밑에 작성(기존 스타일을 덮어써야 하므로)
