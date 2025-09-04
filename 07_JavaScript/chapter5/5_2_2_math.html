@@ -62,8 +62,8 @@
     document.write(Math.trunc(4.9), '<br>'); // 4
     document.write(Math.trunc(4.7), '<br>'); // 4
     document.write(Math.trunc(4.4), '<br>'); // 4
-    document.write(Math.trunc(4.2), '<br>'); // 4
-    document.write(Math.trunc(-4.2), '<br>'); // -4
+    document.write(Math.trunc(4.2), '<br>'); // 
+    document.write(Math.trunc(-4.2), '<br>'); // -44
 
     // 5) Math.sign()
     // 숫자가 양수인지 음수인지 확인하는 용도로 사용
@@ -135,7 +135,21 @@
     const selectRps = prompt('가위, 바위, 보 중 선택하세요.', '가위');
     let player;
 
-    
+    switch (selectRps) {
+      case '가위':
+        player = 1;
+        break;
+      case '바위':
+        player = 2;
+        break;
+      case '보':
+        player = 3;
+        break;
+      default:
+        alert('잘못 작성하셨습니다.');
+        location.reload(); // 새로고침
+        break;
+    }
 
     
 
