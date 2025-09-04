@@ -31,14 +31,24 @@
     // 실행 환경에서 추가로 제공되는 객체
     // 예: 브라우저 환경에서는 브라우저 객체(BOM), 문서 객체(DOM), Canvas 등
 
-    // 3. 사용자 정의 객체 만들기(2가지 방법)
+    // 3. 일반 객체(사용자 정의 객체) 만들기(2가지 방법)
     // 1) Object 내장 객체 이용
     // const 변수 = new 객체 생성자 함수();
     // new: 객체 생성 키워드
     // 생성한 객체를 사용하기 위해 변수에 저장
 
     // const 변수 = new Object(); // 객체 생성자 함수(constructor)는 대문자로 시작!!
+    const tv = new Object(); // 빈 객체 생성
+    // 속성 및 메소드 추가
+    // 객체 접근은 도트 연산자(.) 이용
+    tv.color = 'white';
+    tv.price = 300000;
+    tv.info = function () {
+      // this: 객체 자기 자신을 가리킴
+      return `tv 색상: ${this.color}, 가격: ${this.price}`;
+    };
     document.write('<h1>tv 객체 메소드 호출</h1>');
+    document.write(tv.info(), '<br>');
 
     // 2) 리터럴 방식을 이용
     document.write('<h1>car 객체 메소드 호출</h1>');
