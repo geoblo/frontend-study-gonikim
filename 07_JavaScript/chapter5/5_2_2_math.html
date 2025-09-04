@@ -172,7 +172,18 @@
     document.write(`<img src="images/math_img_${player}.jpg">`);
 
     // Quiz: 누가 이겼는지 출력하기
-    
+    // player와 com의 차를 이용
+    // 0이면 비김
+    // 1 또는 -2 이면 내가 이김
+    // 그 외는 내가 짐
+    const whoWin = player - com;
+    if (whoWin === 0) {
+      document.write('비겼다!');
+    } else if (whoWin === 1 || whoWin === -2) {
+      document.write('내가 이겼다!');
+    } else {
+      document.write('내가 졌다!');
+    }
   </script>
 </body>
 </html>
