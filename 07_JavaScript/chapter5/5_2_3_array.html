@@ -143,16 +143,21 @@
     // 배열에 문자형 데이터가 있는 경우 오름차순으로 정렬
     // 원본 배열이 변경됨
     fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
-    
+    fruits.sort();
+    console.log(fruits);
 
     // 배열 안에 숫자형 데이터가 있더라도 기본적으로는 문자로 인식해서 오름차순으로 정렬
     const points = [40, 100, 1, 5, 25, 10];
-    
+    points.sort();
+    console.log(points);
     // '25'는 '100'보다 크다. 왜냐하면 '2'가 '1'보다 크기 때문
     // 그래서 숫자 값으로 정렬하려면 정렬(비교) 함수를 정의해서 사용해야 함
     // array.sort(정렬함수);
     // 정렬함수: function(a, b) { return a - b; }
-    
+    points.sort(function (a, b) {
+      return a - b;
+    });
+    console.log(points);
     // 정렬 원리
     // returned (negative, zero, positive) value
     // 음수가 나오면 a, b 순으로 두 요소의 위치를 바꾸지 않음
@@ -167,12 +172,14 @@
     // Step 7: 최종적으로 [1, 5, 10, 25, 40, 100] 결과를 얻음
 
     // Quiz: 숫자 데이터 내림차순 정렬하기
-    
+    points.sort(function (a, b) {
+      return b - a;
+    });
+    console.log(points);
 
     // 활용 Tip!
     // 실무에서는 Object의 특정 키를 기준으로 sort() 함수를 사용하는 경우가 많음
     // 예: 쇼핑몰 상품 목록에서 가격 높은 순, 낮은 순, 리뷰 많은 순, 누적 판매 순
-    // Quiz: 아래 사람들을 점수가 높은 순으로 정렬하기
     const persons = [
       {
         name: '유재석',
@@ -196,26 +203,45 @@
       },
     ];
 
-    
+    // Quiz: 위 사람들을 점수가 높은 순으로 정렬하기
+    persons.sort(function (a, b) {
+      // return b.point - a.point;
 
+      // 단순 대소 비교가 아닌 더 복잡한 조건일 때 응용 가능!
+      if (a.point > b.point) return -1; // 위치를 바꾸지 않음
+      else if (a.point < b.point) return 1; // 위치를 바꿈
+      else return 0; // 변화 없음 
+    });
+    console.log(persons);
+    
     // 11) reverse()
     // 배열의 순서를 반대로 바꿈
     // 원본 배열이 변경됨
     // 보통 정렬된 배열을 역순으로 정렬할 때 사용
     fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
+    fruits.sort();
+    fruits.reverse();
+    console.log(fruits);
     
-
     // 12) indexOf(), lastIndexOf()
     // 배열 안에 특정 요소가 존재하는지를 찾고, 
     // 찾으면 첫번째 인덱스(위치)를 반환
     // 찾을 수 없는 경우 -1을 반환
     fruits = ['Banana', 'Orange', 'Apple', 'Mango', 'Apple'];
-    
+    let index = fruits.indexOf('Apple');
+    console.log(index);
+    index = fruits.indexOf('Apple', 3); // 검색 시작 위치 지정
+    console.log(index);
+    index = fruits.lastIndexOf('Apple');
+    console.log(index);
 
     // (ES7차) includes()
     // 지정된 값이 포함된 경우 true를 반환
     // 포함되지 않은 경우 false를 반환
-    
+    let has = fruits.includes('Mango');
+    console.log(has);
+    has = fruits.includes('Banana', 3); // 검색 시작 위치 지정
+    console.log(has);
   </script>
 </body>
 </html>
