@@ -27,6 +27,39 @@
 
     document.write('<h1>JSON 객체</h1>');
 
+    // 1) JSON.stringify()
+    // 데이터를 서버로 전송하기 위해서는 데이터 형태를 문자열 형태로 변환해야 함
+    // stringify 함수를 사용하여 Object 데이터를 JSON 문자열로 변환
+    const teacher = {
+      name: 'Goni',
+      age: 30,
+      isAdmin: true,
+      courses: ['html', 'css', 'js']
+    };
+
+    const jsonString = JSON.stringify(teacher); // 객체를 문자열로 변환
+    console.log(jsonString);
+    console.log(typeof jsonString);
+    /* JSON으로 인코딩된 객체
+      {"name":"Goni","age":30,"isAdmin":true,"courses":["html","css","js"]}
+    */
+
+    // 2) JSON.parse()
+    // 서버로부터 응답받은 데이터는 문자열 형태임
+    // parse 함수를 사용하여 Object 데이터로 변환
+    const text = `{
+      "name":"Goni",
+      "age":30,
+      "isAdmin":true,
+      "courses":["html","css","js"]
+    }`;
+
+    const obj = JSON.parse(text); // 문자열 형태의 JSON을 Object 객체로 변환
+    console.log(obj);
+    
+    // (참고)
+    // Object -- serialize(직렬화) --> JSON(string 타입)
+    // Object <-- deserialize(역직렬화) -- JSON(string 타입)
   </script>
 </body>
 </html>
