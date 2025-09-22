@@ -47,20 +47,24 @@
     // 예상 결과: 11.5
 
     // 답: 
+    function calculatePrice(total, tax = 0.1, tip = 0.05) {
+      return total + (total * tax) + (total * tip);
+    }
+    console.log(calculatePrice(10));
 
     // 2. 다음 코드의 올바른 출력은?
     const b = 3;
     function multiply(a, b = 2) {
       return a * b;
     }
-    // console.log(multiply(5));
+    console.log(multiply(5));
 
     // 1) 2
     // 2) 5
     // 3) 10
     // 4) 15
 
-    // 답:
+    // 답: 3번
 
   </script>
 </body>
