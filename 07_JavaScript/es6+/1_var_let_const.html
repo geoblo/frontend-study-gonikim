@@ -14,30 +14,59 @@
     // 함수 스코프에 종속, 그 외엔 전역
     // 블록 기준으로 스코프가 생기지 않기 때문에 블록 밖에서 접근 가능
     // 예: for문(블록 스코프) 내에서 var로 선언하면 for문 밖에서도 사용 가능
-    
+    for (var i = 0; i < 10; i++) {
+      var leak = '나는 반복문 블록 밖에서도 사용 가능'; // 전역 변수
+    }
+    console.log(leak);
+
+    function myFunc() {
+      var functionScoped = '나는 함수 안에서만 사용 가능'; // 지역 변수
+      console.log(functionScoped);
+    }
+    myFunc();
+    // console.log(functionScoped); // 함수를 벗어나면 접근 불가
 
     // 2. let
     // 블록 스코프에 종속, 그 외엔 전역
     // 변수가 선언된 블록과 그 하위 블록 내에서만 사용 가능
     // let 사용 예
-    
+    let x = 'global'; // 전역 변수
+    if (x === 'global') {
+      let x = 'block-scoped'; // 지역 변수
+
+      console.log(x);
+    }
+    console.log(x);
 
     // var 사용 예
-    
+    var y = 'global'; // 전역 변수
+    if (y === 'global') {
+      var y = 'block-scoped'; // 전역 변수
+
+      console.log(y);
+    }
+    console.log(y); // y값이 변경되어 있음
 
     // 3. const
     // 블록 스코프에 종속, 그 외엔 전역
     // 값이 변경될 수 없다.
-    
-
-    
+    const constant = 'I am a constant'; // 전역 변수
+    // constant = 'can not be reassigned'; // 값의 재할당 불가
 
     // 4. 선언하기 전 사용할 수 있는 var
-    
+    console.log(iam);
+    var iam = 'I am a var';
+    // var는 정의되기 전에 접근 가능, 값은 비어 있는 상태(undefined)
+
+    // console.log(jam);
+    let jam = 'I am a let';
+    // let, const는 정의되기 전에 접근 불가
 
     // 5. var는 중복 선언을 허용
+    var user = 'Peter';
+    var user = 'John'; // 이 "var"는 아무것도 하지 않음
+    console.log(user);
     
-
     // (정리) var와 let, const의 차이점
     // 1) 스코프가 다르다. var로 선언한 변수는 블록 스코프가 아닌 함수 수준 스코프를 갖는다.
     // 2) var는 정의되기 전에 접근할 수 있다.(정의되기 전에는 undefined)
@@ -60,7 +89,7 @@
     // 2) Good morning
     // 3) Farewell
 
-    // 답: 
+    // 답: 2번
 
     // 2. 다음 코드의 올바른 출력은?
     let value = 1;
@@ -76,7 +105,7 @@
     // 2) 2
     // 3) 3
 
-    // 답: 
+    // 답: 2번
 
     // 3. 다음 코드의 올바른 출력은?
     let a = 100;
@@ -91,7 +120,7 @@
     // 2) 100
     // 3) 50
     
-    // 답: 
+    // 답: 2번
 
     // 4. 다음 코드의 올바른 출력은?
     console.log(b);
@@ -102,7 +131,7 @@
     // 2) ReferenceError
     // 3) 1
 
-    // 답: 
+    // 답: 2번
   </script>
 </body>
 </html>
