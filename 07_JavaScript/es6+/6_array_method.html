@@ -18,6 +18,22 @@
     const numbers = [65, 44, 12, 4];
     // 예상 결과: [650, 440, 120, 40]
 
+    // const newNumbers = numbers.map((num, index) => {
+    //   return num * 10;
+    // });
+    const newNumbers = numbers.map(num => num * 10);
+    console.log(newNumbers);
+
+    // Quiz
+    // 각 사람의 전체 이름을 가진 새 배열 만들기
+    // 예상 결과: ['Goni Kim', 'Zero Cho', 'Velopert Kim']
+    const persons = [
+      { firstName: 'Goni', lastName: 'Kim' },
+      { firstName: 'Zero', lastName: 'Cho' },
+      { firstName: 'Velopert', lastName: 'Kim' }
+    ];
+    
+
     // 2. array.filter(function(currentValue, index) {})
     // 제공된 테스트 함수를 통과하는 요소들만 따로 추출하여 새 배열을 만듦
     // 테스트 함수에서는 true 또는 false를 반환해야 하며, 여기서 true를 반환하는 경우만 새로운 배열에 포함됨
