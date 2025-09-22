@@ -109,7 +109,18 @@
     
     // 배열의 요소 중 3보다 큰 첫번째 요소를 반환
     const array = [1, 2, 3, 4, 5];
-    
+    const found = array.find((num) => {
+      return num > 3;
+    });
+    console.log(found);
+    console.log(array.find(e => e > 10)); // 없으면 undefined
+
+    // 사용 예: 배열에서 고유한 값(예: id값)으로 특정 요소를 찾을 때 유용
+    // Quiz: products 배열에서 id가 '3'인 상품 찾기
+    const foundProduct = products.find((product) => {
+      return product.id === '3';
+    });
+    console.log(foundProduct);
 
     // 2. array.findIndex(function(currentValue, index) {})
     // 제공된 테스트 함수를 충족하는 배열의 첫번째 요소의 인덱스를 반환
@@ -117,6 +128,11 @@
     // 원래 배열을 변경하지 않음
     const greetings = ['hello', 'hi', 'byebye', 'goodbye', 'hi'];
 
+    const hiIndex = greetings.findIndex((e) => {
+      return e === 'hi';
+    });
+    console.log(hiIndex);
+    console.log(greetings.findIndex(e => e === 'hey')); // 없으면 -1
   </script>
 </body>
 </html>
