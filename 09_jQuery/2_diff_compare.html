@@ -31,5 +31,31 @@
     <li class="selected">jQuery</li>
     <li>Bootstrap</li>
   </ul>
+
+  <script>
+    // JavaScript VS jQuery
+    // 1) JavaScript
+    // const navItems = document.querySelectorAll('#navigation li');
+    
+    // navItems.forEach(function (item) {
+    //   item.addEventListener('click', function () {
+    //     // 모든 li에서 selected 클래스 제거
+    //     navItems.forEach(function (el) {
+    //       el.classList.remove('selected');
+    //     });
+
+    //     // 클릭한 요소에 selected 클래스 추가
+    //     this.classList.add('selected');
+    //   });
+    // });
+
+    // 2) jQuery
+    $('#navigation li').click(function () {
+      // 모든 li에서 selected 클래스 제거
+      $('#navigation li').removeClass('selected');
+      // 클릭한 요소에 selected 클래스 추가
+      $(this).addClass('selected');
+    });
+  </script>
 </body>
 </html>
