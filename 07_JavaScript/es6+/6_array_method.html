@@ -32,7 +32,13 @@
       { firstName: 'Zero', lastName: 'Cho' },
       { firstName: 'Velopert', lastName: 'Kim' }
     ];
-    
+    // const newPersons = persons.map((item) => {
+    //   // console.log(item);
+
+    //   return `${item.firstName} ${item.lastName}`;
+    // });
+    const newPersons = persons.map(item => `${item.firstName} ${item.lastName}`);
+    console.log(newPersons);
 
     // 2. array.filter(function(currentValue, index) {})
     // 제공된 테스트 함수를 통과하는 요소들만 따로 추출하여 새 배열을 만듦
