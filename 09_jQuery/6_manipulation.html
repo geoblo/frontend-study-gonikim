@@ -93,6 +93,10 @@
 
     // attr(): HTML 속성(attribute), 원래 설정된 초기 HTML 속성의 값
     // prop(): DOM 속성(property), 현재 DOM 객체의 실시간 상태 반영(주로 checked, selected, disabled 등에 쓰임)
+    $('#chk').on('change', function () {
+      console.log($(this).attr('checked')); // 'checked'(초기 HTML에 있는 속성값을 그대로 읽음)
+      console.log($(this).prop('checked')); // true/false(실제 체크 상태를 반영)
+    });
   </script>
 </body>
 </html>
