@@ -76,7 +76,6 @@
     $('p').on('click', function () {
       $(this).toggleClass('highlight');
     });
-
   </script>
 
   <input type="text" value="some text">
@@ -86,7 +85,14 @@
 
   <script>
     // 7) 속성제어 (.attr(), .prop(), .removeAttr(), .removeProp(), .val())
+    $('input[type="text"]').on('keyup', function () {
+      const value = $(this).val();
+      $('p.target').text(value);
+    })
+    .trigger('keyup'); // 페이지가 로드되었을 때 이미 input에 들어있는 값을 반영하기 위해 keyup 이벤트 강제 발생
 
+    // attr(): HTML 속성(attribute), 원래 설정된 초기 HTML 속성의 값
+    // prop(): DOM 속성(property), 현재 DOM 객체의 실시간 상태 반영(주로 checked, selected, disabled 등에 쓰임)
   </script>
 </body>
 </html>
