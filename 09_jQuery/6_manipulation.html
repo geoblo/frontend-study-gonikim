@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    p {
+      margin: 4px;
+      font-size: 16px;
+      font-weight: bolder;
+      cursor: pointer;
+    }
+    .blue {
+      color: blue;
+    }
+    .highlight {
+      background: yellow;
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+  <h2>Greetings</h2>
+  <div class="container">
+    <div class="inner">Hello</div>
+    <div class="inner">Goodbye</div>
+  </div>
+
+  <div class="container">
+    <div class="hello">
+      Hello, <span>Person</span> <em>and person</em>.
+    </div>
+    <div class="goodbye">Goodbye</div>
+  </div>
+
+  <script>
+    // 제이쿼리 엘리먼트 조작 참고: https://api.jquery.com/category/manipulation/
+    
+    // 1) 자식으로 삽입 (.append(), .appendTo(), .html(), .prepend(), .prependTo(), .text())
+
+    // 2) 형제로 삽입 (.after(), .before(), .insertAfter(), .insertBefore())
+
+    // 3) 부모로 감싸기 (.unwrap(), .wrap(), .wrapAll(), .wrapInner())
+
+    // 4) 삭제 (.detach(), .empty(), .remove(), .unwrap())
+
+    // 5) 치환 (.replaceAll(), .replaceWith())
+
+  </script>
+
+  <p class="blue">Click to toggle</p>
+  <p class="blue highlight">highlight</p>
+  <p class="blue">on these</p>
+  <p class="blue">paragraphs</p>
+
+  <script>
+    // 6) 클래스 (.addClass(), .hasClass(), .removeClass(), .toggleClass())
+
+
+  </script>
+
+  <input type="text" value="some text">
+  <p class="target"></p>
+
+  <input type="checkbox" id="chk" checked>
+
+  <script>
+    // 7) 속성제어 (.attr(), .prop(), .removeAttr(), .removeProp(), .val())
+
+  </script>
+</body>
+</html>
