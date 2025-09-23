@@ -95,5 +95,14 @@
     <li class="bar">list item 3</li>
   </ul>
 
+  <script>
+    // 12) end(): 바로 이전 선택 상태(선택 체이닝 이전)로 돌아감
+    $('ul.first').find('.foo').css('background-color', 'red').end().find('.bar').css('background-color', 'green');
+    // 여러 조작을 연달아 체이닝해야 할 경우 유리
+    // But, 너무 복잡한 체이닝은 코드의 가독성을 떨어뜨릴 수 있음
+    // 단순한 구조에서는 직접 선택이 더 깔끔함
+    $('ul.first .foo').css('background-color', 'red');
+    $('ul.first .bar').css('background-color', 'green');
+  </script>
 </body>
 </html>
