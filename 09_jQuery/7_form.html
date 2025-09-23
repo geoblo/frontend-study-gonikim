@@ -29,6 +29,15 @@
   <script>
     // 제이쿼리 폼 참고: https://api.jquery.com/category/forms/
 
+    $('input').on('focus', function () {
+      $(this).next().text('focus');
+    }).on('blur', function () {
+      $(this).next().text('blur');
+    }).on('change', function () {
+      alert('change!! ' + $(this).val());
+    }).on('select', function () { // 일부 텍스트가 선택됐을 때 발생
+      $(this).next().text('select');
+    });
   </script>
 
   <p>Type 'correct' to validate.</p>
@@ -41,7 +50,16 @@
   <span></span>
 
   <script>
-
+    $('form').on('submit', function (e) {
+      if ($('form input:first-child').val() === 'correct') {
+        $('span').text('Validated..');
+        return true;
+      }
+      
+      $('span').text('Not Valid!');
+      return false; // jQuery에서만 동작하는 방식, 기본 동작 방지(폼 전송 막음)
+      // e.preventDefault(); // 표준 JS 방식
+    });
   </script>
 </body>
 </html>
